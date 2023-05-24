@@ -88,3 +88,7 @@ export interface CharacterDataWrapper {
   data?: CharacterDataContainer;
   etag?: string;
 }
+
+export interface initialStateCharacterSlice {
+  character: Character | null
+}

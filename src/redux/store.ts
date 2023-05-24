@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import heroReducer from "./features/heroSlice";
+import characterReducer from "./features/characterSlice";
 import paginationReducer from "./features/paginationSlice";
 import { marvelApi } from "./services/marvelApi";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 
 export const store = configureStore({
   reducer: {
-    heroReducer,
+    characterReducer,
     paginationReducer,
     [marvelApi.reducerPath]: marvelApi.reducer,
   },

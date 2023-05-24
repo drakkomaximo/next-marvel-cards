@@ -1,6 +1,7 @@
-import { Image } from "@/interfaces" 
-import ImageNotFound from "@/assets/images/imageNotFound.png";
+import { Image } from "@/interfaces";
 
-export const createUrlImage = ({thumbnail}: {thumbnail: Image}) => (
-    `${thumbnail.path}.${thumbnail.extension}` || ImageNotFound
-)
+export const createUrlImage = ({ thumbnail }: { thumbnail?: Image }) => {
+  if (thumbnail && thumbnail.path && thumbnail.extension)
+    return `${thumbnail.path}.${thumbnail.extension}`;
+  return "";
+};

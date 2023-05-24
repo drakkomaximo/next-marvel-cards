@@ -8,10 +8,10 @@ export const paginationSlice = createSlice({
   name: "pagination",
   initialState,
   reducers: {
-    increment: (state) => {
+    nextPage: (state) => {
       state.initialLimit += 5;
     },
-    decrement: (state) => {
+    previusPage: (state) => {
       state.initialLimit === 5
         ? state.initialLimit === 5
         : (state.initialLimit -= 5);
@@ -19,6 +19,6 @@ export const paginationSlice = createSlice({
   },
 });
 
-export const { decrement, increment } = paginationSlice.actions;
+export const { nextPage, previusPage } = paginationSlice.actions;
 
 export default paginationSlice.reducer;
